@@ -1,11 +1,11 @@
-About slotscheck
-================
+About slotscheck-feedstock
+==========================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/slotscheck-feedstock/blob/main/LICENSE.txt)
 
 Home: https://github.com/ariebovenberg/slotscheck
 
 Package license: MIT
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/slotscheck-feedstock/blob/main/LICENSE.txt)
 
 Summary: Validate your __slots__
 
