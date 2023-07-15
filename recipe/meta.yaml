@@ -12,7 +12,7 @@ source:
 
 build:
   noarch: python
-  number: 0
+  number: 1
   entry_points:
     - slotscheck = slotscheck.cli:root
   script: {{ PYTHON }} -m pip install . -vv
@@ -21,13 +21,13 @@ requirements:
   host:
     - poetry-core >=1.0.0
     - pip
-    - python >=3.6.2,<4
+    - python >=3.7,<4
   run:
-    - click >=8.0
-    - dataclasses >=0.6
-    - importlib-metadata >=1,<5
-    - python >=3.6.2,<4
+    - click >=8.0,<9.0
+    - importlib-metadata >=1,<6
+    - python >=3.7,<4
     - tomli >=0.2.6,<3.0.0
+    - typing-extensions >=4.1,<5
 
 test:
   imports:
