@@ -1,5 +1,5 @@
 {% set name = "slotscheck" %}
-{% set version = "0.16.5" %}
+{% set version = "0.17.0" %}
 
 
 package:
@@ -8,11 +8,11 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/slotscheck-{{ version }}.tar.gz
-  sha256: 6cae3e73808121cf63c1bc638c3b5ae7e10f651323ad3cf38790ce005b77e221
+  sha256: 5e4ccb16148825b6a644705a4f8ca30855c853e4a777229ec5ed1ee4a55fa97c
 
 build:
   noarch: python
-  number: 1
+  number: 0
   entry_points:
     - slotscheck = slotscheck.cli:root
   script: {{ PYTHON }} -m pip install . -vv
@@ -21,13 +21,11 @@ requirements:
   host:
     - poetry-core >=1.0.0
     - pip
-    - python >=3.7,<4
+    - python >=3.8,<4.0
   run:
-    - click >=8.0,<9.0
-    - importlib-metadata >=1,<6
-    - python >=3.7,<4
+    - click >=8.0.0,<9.0.0
+    - python >=3.8,<4.0
     - tomli >=0.2.6,<3.0.0
-    - typing-extensions >=4.1,<5
 
 test:
   imports:
