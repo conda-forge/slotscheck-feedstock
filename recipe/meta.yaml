@@ -1,5 +1,5 @@
 {% set name = "slotscheck" %}
-{% set version = "0.17.1" %}
+{% set version = "0.17.3" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/slotscheck-{{ version }}.tar.gz
-  sha256: fdef47766530df994cf99dda484a15f212eaf6f2e2402026c39348f3f0e62827
+  sha256: 13ea4912f1d98a5835268780179c54e435cde058540a0788679df573ace8be01
 
 build:
   noarch: python
