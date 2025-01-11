@@ -7,12 +7,12 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/slotscheck-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/slotscheck-{{ version }}.tar.gz
   sha256: 6146b7747f8db335a00a66b782f86011b74b995f61746dc5b36a9e77d5326013
 
 build:
   noarch: python
-  number: 0
+  number: 1
   entry_points:
     - slotscheck = slotscheck.cli:root
   script: {{ PYTHON }} -m pip install . -vv
@@ -21,10 +21,10 @@ requirements:
   host:
     - poetry-core >=1.9.0
     - pip
-    - python >=3.8,<4.0
+    - python {{ python_min }}
   run:
     - click >=8.0.0,<9.0.0
-    - python >=3.8,<4.0
+    - python >={{ python_min }},<4.0
     - tomli >=0.2.6,<3.0.0
 
 test:
@@ -35,6 +35,7 @@ test:
     - slotscheck --help
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/ariebovenberg/slotscheck
