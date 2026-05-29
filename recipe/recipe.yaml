@@ -1,0 +1,57 @@
+schema_version: 1
+
+context:
+  name: slotscheck
+  version: "0.20.0"
+
+package:
+  name: ${{ name|lower }}
+  version: ${{ version }}
+
+source:
+  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/slotscheck-${{ version }}.tar.gz
+  sha256: 7069653d51578c08239fabe26cb55fa81acfd17ce72cb404e6b957874058a5bd
+
+build:
+  number: 0
+  noarch: python
+  script: ${{ PYTHON }} -m pip install . -vv
+  python:
+    entry_points:
+      - slotscheck = slotscheck.cli:root
+
+requirements:
+  host:
+    - poetry-core >=1.9.0
+    - pip
+    - python ${{ python_min }}.*
+  run:
+    - click >=8.0.0,<9.0.0
+    - python >=${{ python_min }}
+    - tomli >=0.2.6,<3.0.0
+
+tests:
+  - python:
+      imports:
+        - slotscheck
+      pip_check: true
+      python_version:
+        - ${{ python_min }}.*
+        - "*"
+  - requirements:
+      run:
+        - pip
+        - python ${{ python_min }}
+    script:
+      - slotscheck --help
+
+about:
+  summary: Validate your __slots__
+  license: MIT
+  license_file: LICENSE
+  homepage: https://github.com/ariebovenberg/slotscheck
+  documentation: https://slotscheck.readthedocs.io/en/latest/
+
+extra:
+  recipe-maintainers:
+    - thewchan
