@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: slotscheck
-  version: "0.20.0"
+  version: "0.20.1"
 
 package:
   name: ${{ name|lower }}
@@ -10,7 +10,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/slotscheck-${{ version }}.tar.gz
-  sha256: 7069653d51578c08239fabe26cb55fa81acfd17ce72cb404e6b957874058a5bd
+  sha256: f590fddcea4b673f6ef3ee0010a545df1cad96941ef09906b28b2ee31c38c66b
 
 build:
   number: 0
